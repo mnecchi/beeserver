@@ -2,7 +2,8 @@
   "name": "beeserver",
   "version": "0.0.1",
   "description": "An api mocked server with a mocked db",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -34,9 +35,12 @@
   },
   "homepage": "https://github.com/mnecchi/beeserver#readme",
   "dependencies": {
-    "dev-dbmock": "0.0.1"
+    "body-parser": "^1.19.0",
+    "dev-dbmock": "0.0.1",
+    "express": "^4.17.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.6",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.4",
     "jest": "^26.0.1",
