@@ -16,7 +16,6 @@ interface EndpointConfig {
 }
   
 export interface BeeserverConfig {
-  port: number;
   dbPath: string;
   endpoints: {
     [name: string]: EndpointConfig;
