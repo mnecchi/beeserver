@@ -16,7 +16,7 @@ const getAliases = (aliases: Alias[] | undefined, method: RestMethod) => {
   }, [] as string[]); 
 };
 
-export default async ({ dbPath, endpoints }: BeeserverConfig) => {
+export default async ({ dbPath, endpoints }: BeeserverConfig): Promise<express.Express> => {
   const app = express();
 
   app.use(bodyParser.json());

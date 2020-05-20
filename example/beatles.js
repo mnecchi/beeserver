@@ -14,6 +14,13 @@ const config = {
     }
 };
 
-beeserver(port, config, () => {
-    console.log(`Beeserver listening on port ${port}...`);
-});
+beeserver(config).then(app => {
+    app.get('/selftest', (_, res) => {
+        res.setHeader('Content-Type', 'text/plain');
+        return res.status(200).send('OK!');
+    });
+
+    app.listen(port, () => {
+        console.log(`Beeserver listening on port ${port}...`);
+    });
+})

@@ -8,15 +8,17 @@ export interface Alias {
   name: string;
   methods?: RestMethod[];
 }
+
+interface EndpointConfig {
+  methods?: RestMethod[];
+  seed?: any[];
+  aliases?: Alias[];
+}
   
 export interface BeeserverConfig {
   port: number;
   dbPath: string;
   endpoints: {
-    [name: string]: {
-      methods?: RestMethod[];
-      seed?: any[];
-      aliases?: Alias[];
-    };
+    [name: string]: EndpointConfig;
   };
 }
